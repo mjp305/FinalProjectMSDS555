@@ -1,0 +1,3 @@
+CREATE (p:Player {name: 'Ronaldo Gaúcho', YOB: 1980, POB: 'Porto Alegre'});
+CREATE (c:Country {name: 'Brazil'});
+CREATE (p)-[:PLAYER_OF]->(c);

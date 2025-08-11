@@ -1,0 +1,2 @@
+MATCH (p:Player {name: 'Ronaldo Gaúcho'}), (c:Country {name: 'Brazil'})
+CREATE (p)-[:FOOTBALLER_OF {Matches: 97, Goals: 33}]->(c);

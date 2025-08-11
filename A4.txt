@@ -1,0 +1,8 @@
+LOAD CSV WITH HEADERS FROM 'file:///FIFA.csv' AS row
+CREATE (:Player {
+  Rank: toInteger(row.Rank),
+  Name: row.Name,
+  Country: row.Country,
+  Goals: toInteger(row.Goals),
+  Matches: toInteger(row.Matches)
+});

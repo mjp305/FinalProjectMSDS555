@@ -1,0 +1,23 @@
+CREATE (wc:Event {name: "FIFA World Cup"});
+
+CREATE (p1:Player {name: "Miroslav Klose", country: "Germany", goals: 16, matches: 24});
+CREATE (p2:Player {name: "Ronaldo", country: "Brazil", goals: 15, matches: 19});
+CREATE (p3:Player {name: "Gerd Müller", country: "Germany", goals: 14, matches: 13});
+CREATE (p4:Player {name: "Just Fontaine", country: "France", goals: 13, matches: 6});
+CREATE (p5:Player {name: "Pelé", country: "Brazil", goals: 12, matches: 14});
+
+MATCH (wc:Event {name: "FIFA World Cup"})
+MATCH (p1:Player {name: "Miroslav Klose"})
+MATCH (p2:Player {name: "Ronaldo"})
+MATCH (p3:Player {name: "Gerd Müller"})
+MATCH (p4:Player {name: "Just Fontaine"})
+MATCH (p5:Player {name: "Pelé"})
+CREATE (p1)-[:PLAYED_AT]->(wc)
+CREATE (p2)-[:PLAYED_AT]->(wc)
+CREATE (p3)-[:PLAYED_AT]->(wc)
+CREATE (p4)-[:PLAYED_AT]->(wc)
+CREATE (p5)-[:PLAYED_AT]->(wc);
+
+MATCH (p:Player)
+RETURN p.name AS Player, p.goals AS Goals
+ORDER BY p.goals DESC;
